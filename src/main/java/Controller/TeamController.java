@@ -1,4 +1,4 @@
-package com.company.CommuteSystem;
+package Controller;
 
 import com.company.CommuteSystem.Request.TeamRegistRequest;
 import org.springframework.web.bind.annotation.PostMapping;

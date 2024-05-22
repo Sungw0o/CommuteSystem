@@ -2,6 +2,8 @@ package com.company.CommuteSystem.domain;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 public class Team {
 
@@ -11,6 +13,9 @@ public class Team {
 
     @Column(nullable = false)
     private String name;
+
+    @OneToMany(mappedBy = "team")
+    private List<Employee> employeeList;
 
     protected Team() {}
 
