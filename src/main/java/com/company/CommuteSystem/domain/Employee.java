@@ -1,21 +1,14 @@
 package com.company.CommuteSystem.domain;
 
+import com.company.CommuteSystem.domain.Team;
 import jakarta.persistence.*;
 
-
 import java.time.LocalDate;
-import java.util.Date;
+import java.util.List;
 
 @Entity
-@Table(name="employeeInfo")
-
+@Table(name = "employee")
 public class Employee {
-    public enum Role{
-        manager, member
-    }
-
-    protected Employee() {
-    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,34 +18,23 @@ public class Employee {
     @JoinColumn(name="team_id")
     private Team team;
 
-    @Column(nullable = false)
     private String name;
-
-    @Enumerated(EnumType.STRING)
-    private Role role;
-
+    private boolean is_manager;
     private LocalDate birthday;
-
     private LocalDate workStartDate;
 
-    public Employee(Team team, String name, Role role, LocalDate birthday, LocalDate workStartDate) {
-        this.team = team;
-        this.name = name;
-        this.role = role;
-        this.birthday = birthday;
-        this.workStartDate = workStartDate;
-    }
 
-    public long getId() {
-        return id;
+    public Team getTeam() {
+        return team;
     }
 
     public String getName() {
         return name;
     }
 
-    public Role getRole() {
-        return role;
+    @Column(name = "is_manager")
+    public boolean is_manager() {
+        return is_manager;
     }
 
     public LocalDate getBirthday() {
@@ -62,4 +44,15 @@ public class Employee {
     public LocalDate getWorkStartDate() {
         return workStartDate;
     }
+
+    protected Employee() {}
+
+    public Employee(Team team, String name, boolean is_manager, LocalDate birthday, LocalDate workStartDate) {
+        this.team = team;
+        this.name = name;
+        this.is_manager = is_manager;
+        this.birthday = birthday;
+        this.workStartDate = workStartDate;
+    }
+
 }

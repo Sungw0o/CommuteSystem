@@ -1,13 +1,13 @@
 package com.company.CommuteSystem.dto.Request;
 
-import com.company.CommuteSystem.domain.Employee;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.time.LocalDate;
 
 public class EmployeeRegistRequest {
     private String name;
-    private String TeamName;
-    private Employee.Role role;
+    private String teamName;
+    private boolean ismanager;
     private LocalDate birthday;
     private LocalDate workStartDate;
 
@@ -16,11 +16,12 @@ public class EmployeeRegistRequest {
     }
 
     public String getTeamName() {
-        return TeamName;
+        return teamName;
     }
 
-    public Employee.Role getRole() {
-        return role;
+    @JsonProperty("is_manager")
+    public boolean getismanager() {
+        return ismanager;
     }
 
     public LocalDate getBirthday() {
