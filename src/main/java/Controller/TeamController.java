@@ -1,6 +1,6 @@
 package Controller;
 
-import com.company.CommuteSystem.Request.TeamRegistRequest;
+import com.company.CommuteSystem.dto.Request.TeamRegistRequest;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;

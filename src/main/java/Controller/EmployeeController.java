@@ -1,8 +1,7 @@
 package Controller;
 
-import com.company.CommuteSystem.Request.EmployeeRegistRequest;
+import com.company.CommuteSystem.dto.Request.EmployeeRegistRequest;
 import com.company.CommuteSystem.Service.EmployeeService;
-import com.company.CommuteSystem.domain.Employee;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;

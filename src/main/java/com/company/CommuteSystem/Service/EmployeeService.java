@@ -2,7 +2,7 @@ package com.company.CommuteSystem.Service;
 
 import com.company.CommuteSystem.Repository.EmployeeRepository;
 import com.company.CommuteSystem.Repository.TeamRepository;
-import com.company.CommuteSystem.Request.EmployeeRegistRequest;
+import com.company.CommuteSystem.dto.Request.EmployeeRegistRequest;
 import com.company.CommuteSystem.domain.Employee;
 import com.company.CommuteSystem.domain.Team;
 import org.springframework.stereotype.Service;

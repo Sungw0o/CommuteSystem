@@ -1,4 +1,4 @@
-package com.company.CommuteSystem.Request;
+package com.company.CommuteSystem.dto.Request;
 
 import com.company.CommuteSystem.domain.Employee;
 

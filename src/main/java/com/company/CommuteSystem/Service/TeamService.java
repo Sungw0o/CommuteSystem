@@ -1,7 +1,7 @@
 package com.company.CommuteSystem.Service;
 
 import com.company.CommuteSystem.Repository.TeamRepository;
-import com.company.CommuteSystem.Request.TeamRegistRequest;
+import com.company.CommuteSystem.dto.Request.TeamRegistRequest;
 import com.company.CommuteSystem.domain.Team;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
