@@ -2,26 +2,29 @@ package com.company.empmanage.dto;
 
 import com.company.empmanage.entity.Member;
 import com.company.empmanage.entity.Role;
+import com.company.empmanage.entity.Team;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 
-
 @Getter
+@AllArgsConstructor
 public class MemberResponse {
     private String name;
-    private String teamname;
+    private String teamName;
     private Role role;
     private LocalDate birthday;
-    private LocalDate workStartday;
+    private LocalDate workStartDate;
 
     public MemberResponse(Member member) {
         this.name = member.getName();
-        this.teamname = member.getTeamName();
+        this.teamName = member.getTeam().getName();
         this.role = member.getRole();
         this.birthday = member.getBirthday();
-        this.workStartday =member.getWorkStartDate();
+        this.workStartDate = member.getWorkStartDate();
+    }
+
+    public MemberResponse(Team team) {
     }
 }

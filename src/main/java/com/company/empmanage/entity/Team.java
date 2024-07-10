@@ -1,30 +1,33 @@
 package com.company.empmanage.entity;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import jakarta.persistence.*;
+import lombok.*;
+import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @NoArgsConstructor
 @Entity
-
+@Getter
+@Builder
+@AllArgsConstructor
 public class Team {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(nullable = false)
     private String name;
+    @Setter
     private String manager;
+    private int memberCount;
 
-    public Team(String name) {
-        this.name = name;
-    }
-
-    public void setTeamManager(String name) {
+    public void setManager(String name) {
         this.manager = name;
     }
 
-
+    public void addMember() {
+        this.memberCount++;
+    }
 }

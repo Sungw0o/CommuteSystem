@@ -5,12 +5,15 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 @Getter
+@AllArgsConstructor
 public class TeamResponse {
     private String name;
     private String manager;
+    private int memberCount;
 
     public TeamResponse(Team team) {
-        this.name = name;
-        this.manager = manager;
+        this.name = team.getName();
+        this.manager = team.getManager();
+        this.memberCount = team.getMemberCount();
     }
 }
